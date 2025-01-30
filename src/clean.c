@@ -17,7 +17,7 @@ void check_sprite(game_t *all)
 
 void clean_all(game_t *all)
 {
-    for (int i = 0; i < 2; i++) { // Valeur a modifier apres chaque ajout de sprite
+    for (int i = 0; i < 3; i++) { // Valeur a modifier apres chaque ajout de sprite
         if (all->sprites && all->sprites[i].sprite)
             sfSprite_destroy(all->sprites[i].sprite);
         if (all->sprites && all->sprites[i].texture)

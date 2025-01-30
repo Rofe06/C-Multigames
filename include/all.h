@@ -52,6 +52,7 @@ void animation(sfIntRect *sprite, int change, int max);
 // Hunter
 void hunter_screen(game_t *all);
 void background_hunter_animation(game_t *all, sfIntRect *sprites, sfClock *clock);
+void cursor(game_t *all);
 
 // Clean & Free
 void clean_all(game_t *all);
