@@ -43,11 +43,31 @@ void init_hunter(game_t *all)
     all->sprites[2].texture = sfTexture_createFromFile("asset/images/cursor.png", NULL);
     all->sprites[2].sprite = sfSprite_create(); 
     sfSprite_setTexture(all->sprites[2].sprite, all->sprites[2].texture, sfTrue);
+
+    sfVector2f scale = {1.4, 1.4};
+    all->sprites[3].texture = sfTexture_createFromFile("asset/images/bird.png", NULL);
+    all->sprites[3].sprite = sfSprite_create();
+    all->sprites[3].rect.top = 0;
+    all->sprites[3].rect.left = 0;
+    all->sprites[3].rect.width = 100;
+    all->sprites[3].rect.height = 140;
+    all->sprites[3].params.position.x = 0;
+    all->sprites[3].params.position.y = 540;
+    all->sprites[3].params.speed = 6;
+    all->sprites[3].params.speed_max = 12;
+    all->sprites[3].params.acceleration = 2;
+    sfSprite_setTexture(all->sprites[3].sprite, all->sprites[3].texture, sfTrue);
+    sfSprite_setTextureRect(all->sprites[3].sprite, all->sprites[3].rect);
+    sfSprite_setScale(all->sprites[3].sprite, scale);
+
+    all->sprites[4].texture = sfTexture_createFromFile("asset/images/pause.png", NULL);
+    all->sprites[4].sprite = sfSprite_create();
+    sfSprite_setTexture(all->sprites[4].sprite, all->sprites[4].texture, sfTrue);
 }
 
 void init_sprites(game_t *all)
 {
-    all->sprites = malloc(3* sizeof(sprite_t)); // Valeur a modifier apres chaque ajout de sprite
+    all->sprites = malloc(5 * sizeof(sprite_t)); // Valeur a modifier apres chaque ajout de sprite
     init_menu_background(all);
     init_hunter(all);
 }

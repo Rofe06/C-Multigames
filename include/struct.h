@@ -14,14 +14,27 @@ typedef struct window {
     sfEvent event;
 } window_t;
 
+typedef struct params {
+    bool is_paused;
+} params_t;
+
+typedef struct sprite_params {
+    sfVector2f position;
+    int speed;
+    int speed_max;
+    int acceleration;
+} sprite_params_t;
+
 typedef struct sprite {
     sfTexture *texture;
     sfSprite *sprite;
     sfIntRect rect;
+    sprite_params_t params;
 } sprite_t;
 
 typedef struct game {
     window_t settings;
+    params_t params;
     sprite_t *sprites;
 } game_t;
 

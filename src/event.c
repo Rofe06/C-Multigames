@@ -26,6 +26,10 @@ void main_menu_events(game_t *all)
             sfRenderWindow_close(WIN);
             clean_all(all);
         }
+        if (mouse.x >= 1370 && mouse.x <= 1438 && mouse.y >= 918 && mouse.y <= 983 && EVENT.type == sfEvtMouseButtonPressed) {
+            printf("Crédit\n");
+            printf("[rofe.]\n");
+        }
     }
 }
 
@@ -36,5 +40,19 @@ void hunter_events(game_t *all)
             sfRenderWindow_close(WIN);
             clean_all(all);
         }
+        if (EVENT.type == sfEvtKeyPressed && EVENT.key.code == sfKeyEscape)
+            all->params.is_paused = !all->params.is_paused;
+    }
+}
+
+void pause_events(game_t *all)
+{
+    while (sfRenderWindow_pollEvent(WIN, &EVENT)) {
+        if (EVENT.type == sfEvtClosed) {
+            sfRenderWindow_close(WIN);
+            clean_all(all);
+        }
+        if (EVENT.type == sfEvtKeyPressed && EVENT.key.code == sfKeyEscape)
+            all->params.is_paused = !all->params.is_paused;
     }
 }
