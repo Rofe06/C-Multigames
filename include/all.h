@@ -54,6 +54,7 @@ void reset_pos(game_t *all);
 
 // Hunter
 void hunter_screen(game_t *all);
+void reset_hunter(game_t *all);
 void background_hunter_animation(game_t *all, sfClock *clock);
 void cursor(game_t *all);
 

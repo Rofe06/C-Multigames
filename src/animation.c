@@ -27,7 +27,7 @@ void position(game_t *all)
 
 void reset_pos(game_t *all)
 {
-    int nbgen = rand() % 1070 + 10;
+    int nbgen = rand() % 900 + 10;
 
     all->sprites[4].params.position.x = -250;
     all->sprites[4].params.position.y = nbgen;

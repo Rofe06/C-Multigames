@@ -19,8 +19,6 @@ typedef struct window {
 
 typedef struct params {
     bool is_paused;
-    bool miss_shot;
-    sfClock *miss_clock;
 } params_t;
 
 typedef struct sprite_params {

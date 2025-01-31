@@ -60,17 +60,11 @@ void init_hunter(game_t *all)
     sfSprite_setTexture(all->sprites[4].sprite, all->sprites[4].texture, sfTrue);
     sfSprite_setTextureRect(all->sprites[4].sprite, all->sprites[4].rect);
     sfSprite_setScale(all->sprites[4].sprite, scale);
-
-    all->sprites[5].texture = sfTexture_createFromFile("asset/images/miss.png", NULL);
-    all->sprites[5].sprite = sfSprite_create();
-    sfSprite_setTexture(all->sprites[5].sprite, all->sprites[5].texture, sfTrue);
-    all->params.miss_shot = false;
-    all->params.miss_clock = sfClock_create();
 }
 
 void init_sprites(game_t *all)
 {
-    all->sprites = malloc(6 * sizeof(sprite_t)); // Valeur a modifier apres chaque ajout de sprite
+    all->sprites = malloc(5 * sizeof(sprite_t)); // Valeur a modifier apres chaque ajout de sprite
     init_menu_background(all);
     init_pause_menu(all);
     init_hunter(all);

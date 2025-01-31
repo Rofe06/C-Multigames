@@ -27,8 +27,8 @@ void main_menu_events(game_t *all)
             clean_all(all);
         }
         if (mouse.x >= 1370 && mouse.x <= 1438 && mouse.y >= 918 && mouse.y <= 983 && EVENT.type == sfEvtMouseButtonPressed) {
-            printf("Crédit\n");
-            printf("[rofe.]\n");
+            printf("Crédit:\n");
+            printf("\t\t[rofe.]\n");
         }
     }
 }
@@ -47,12 +47,14 @@ void hunter_events(game_t *all)
 
 void pause_events(game_t *all)
 {
+    sfVector2i mouse = sfMouse_getPositionRenderWindow(WIN);
+
     while (sfRenderWindow_pollEvent(WIN, &EVENT)) {
-        if (EVENT.type == sfEvtClosed) {
+        if ((EVENT.type == sfEvtClosed) || (mouse.x >= 407 && mouse.x <= 972 && mouse.y >= 756 && mouse.y <= 856 && EVENT.type == sfEvtMouseButtonPressed)) {
             sfRenderWindow_close(WIN);
             clean_all(all);
         }
-        if (EVENT.type == sfEvtKeyPressed && EVENT.key.code == sfKeyEscape)
+        if ((EVENT.type == sfEvtKeyPressed && EVENT.key.code == sfKeyEscape) || (mouse.x >= 173 && mouse.x <= 618 && mouse.y >= 334 && mouse.y <= 444 && EVENT.type == sfEvtMouseButtonPressed))
             all->params.is_paused = !all->params.is_paused;
     }
 }
