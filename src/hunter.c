@@ -20,13 +20,13 @@ void hunter_screen(game_t *all)
             background_hunter_animation(all, clock);
             position(all);
             sfRenderWindow_clear(WIN, sfBlack);
-            sfRenderWindow_drawSprite(WIN, all->sprites[1].sprite, NULL);
-            sfRenderWindow_drawSprite(WIN, all->sprites[3].sprite, NULL);
+            sfRenderWindow_drawSprite(WIN, all->sprites[2].sprite, NULL);
+            sfRenderWindow_drawSprite(WIN, all->sprites[4].sprite, NULL);
             cursor(all);
             hunter_events(all);
         } else {
             sfRenderWindow_setMouseCursorVisible(WIN, sfTrue);
-            sfRenderWindow_drawSprite(WIN, all->sprites[4].sprite, NULL);
+            sfRenderWindow_drawSprite(WIN, all->sprites[1].sprite, NULL);
             pause_events(all);
         }
         sfRenderWindow_display(WIN);
@@ -36,16 +36,16 @@ void hunter_screen(game_t *all)
 
 void background_hunter_animation(game_t *all, sfClock *clock)
 {
-    sfIntRect *background = &all->sprites[1].rect;
-    sfIntRect *bird = &all->sprites[3].rect;
+    sfIntRect *background = &all->sprites[2].rect;
+    sfIntRect *bird = &all->sprites[4].rect;
     sfTime temps = sfClock_getElapsedTime(clock);
     float seconds = temps.microseconds / 100000.0;
 
     if (seconds > 1) {
         animation(background, 1920, 15360);
         animation(bird, 100, 400);
-        sfSprite_setTextureRect(all->sprites[1].sprite, *background);
-        sfSprite_setTextureRect(all->sprites[3].sprite, *bird);
+        sfSprite_setTextureRect(all->sprites[2].sprite, *background);
+        sfSprite_setTextureRect(all->sprites[4].sprite, *bird);
         sfClock_restart(clock);
     }
 }
@@ -59,6 +59,6 @@ void cursor(game_t *all)
     sfRenderWindow_setMouseCursorVisible(WIN, sfFalse);
     cursorsp_pos.x = sfMouse_getPositionRenderWindow(WIN).x - x;
     cursorsp_pos.y = sfMouse_getPositionRenderWindow(WIN).y - y;
-    sfSprite_setPosition(all->sprites[2].sprite, cursorsp_pos);
-    sfRenderWindow_drawSprite(WIN, all->sprites[2].sprite, NULL);
+    sfSprite_setPosition(all->sprites[3].sprite, cursorsp_pos);
+    sfRenderWindow_drawSprite(WIN, all->sprites[3].sprite, NULL);
 }

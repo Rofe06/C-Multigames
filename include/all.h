@@ -19,9 +19,6 @@
 
 #ifndef INCLUDED_ALL_H
     #define INCLUDED_ALL_H
-    #define WIN all->settings.window
-    #define MODE all->settings.mode
-    #define EVENT all->settings.event
 
 // Main
 int main(int argc, char **argv);
@@ -40,6 +37,7 @@ void init_all(game_t *all);
 void init_sprites(game_t *all);
 void init_window(game_t *all);
 void init_menu_background(game_t *all);
+void init_pause_menu(game_t *all);
 
 // Menu
 void main_menu(game_t *all);

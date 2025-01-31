@@ -7,6 +7,9 @@
 
 #ifndef STRUCT_H
     #define STRUCT_H
+    #define WIN all->settings.window
+    #define MODE all->settings.mode
+    #define EVENT all->settings.event
 
 typedef struct window {
     sfVideoMode mode;
@@ -16,6 +19,8 @@ typedef struct window {
 
 typedef struct params {
     bool is_paused;
+    bool miss_shot;
+    sfClock *miss_clock;
 } params_t;
 
 typedef struct sprite_params {
