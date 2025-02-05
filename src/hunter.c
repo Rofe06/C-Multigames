@@ -56,10 +56,10 @@ void check_hitbox(game_t *all)
 
     all->sprites->hitbox = sfSprite_getGlobalBounds(all->sprites[6].sprite);
     if (sfFloatRect_contains(&all->sprites->hitbox, mouse_pos.x, mouse_pos.y)) {
-        //shoot_sound();
+        // shoot_sound();
         reset_pos(all);
     } else {
-        
+        // miss_sound();
     }
 }
 
