@@ -16,21 +16,21 @@ void animation(sfIntRect *sprite, int change, int max)
 
 void position(game_t *all)
 {
-    sfVector2f position = {all->sprites[4].params.position.x, all->sprites[4].params.position.y};
+    sfVector2f position = {all->sprites[6].params.position.x, all->sprites[6].params.position.y};
 
-    all->sprites[4].params.position.x += all->sprites[4].params.speed;
-    if (all->sprites[4].params.position.x > 1920) {
+    all->sprites[6].params.position.x += all->sprites[6].params.speed;
+    if (all->sprites[6].params.position.x > 1920) {
         reset_pos(all);
     }
-    sfSprite_setPosition(all->sprites[4].sprite, position);
+    sfSprite_setPosition(all->sprites[6].sprite, position);
 }
 
 void reset_pos(game_t *all)
 {
     int nbgen = rand() % 900 + 10;
 
-    all->sprites[4].params.position.x = -250;
-    all->sprites[4].params.position.y = nbgen;
-    if (all->sprites[4].params.speed != all->sprites[4].params.speed_max)
-        all->sprites[4].params.speed += all->sprites[4].params.acceleration;
+    all->sprites[6].params.position.x = -250;
+    all->sprites[6].params.position.y = nbgen;
+    if (all->sprites[6].params.speed != all->sprites[6].params.speed_max)
+        all->sprites[6].params.speed += all->sprites[6].params.acceleration;
 }

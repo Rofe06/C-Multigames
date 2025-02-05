@@ -42,6 +42,8 @@ void hunter_events(game_t *all)
         }
         if (EVENT.type == sfEvtKeyPressed && EVENT.key.code == sfKeyEscape)
             all->params.is_paused = !all->params.is_paused;
+        if (EVENT.type == sfEvtMouseButtonPressed)
+            check_hitbox(all);
     }
 }
 

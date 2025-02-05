@@ -32,6 +32,7 @@ typedef struct sprite {
     sfTexture *texture;
     sfSprite *sprite;
     sfIntRect rect;
+    sfFloatRect hitbox;
     sprite_params_t params;
 } sprite_t;
 
